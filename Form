@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form </title>
+</head>
+<body>
+    <?php 
+    $county = []; 
+
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {        
+        $temples = $_POST['county'] ?? []; 
+        
+        if (!empty($county)) {
+            echo "<h3>ប្រទេសដែលខ្ញុំចូលចិត្តទស្សនា៖</h3>";
+            echo "<ul>";
+            foreach ($temples as $temple) {
+                echo "<li>$temple</li>";
+            }
+            echo "</ul>";
+        } else {
+            echo "<h3>អ្នកមិនបានជ្រើសរើសប្រទេសណាមួយទេ។</h3>";
+        }
+    }
+    ?>
+    
+    <form action="" method="post">
+        <h2>ប្រទេសដែលខ្ញុំចង់ទៅបន្តការសិក្សា៖</h2>
+        <div>
+            <label for="county1">កម្ពុជា:</label>
+            <input type="checkbox" value="កម្ពុជា" <?= in_array("កម្ពុជា", $county) ? "checked" : "" ?> id="county1" name="county[]">
+        </div>
+        <div>
+            <label for="county2">ចិន:</label>
+            <input type="checkbox" value="ចិន" <?= in_array("ចិន", $county) ? "checked" : "" ?> id="county2" name="county[]">
+        </div>
+        <div>
+            <label for="county3">ជប៉ុន:</label>
+            <input type="checkbox" value="ជប៉ុន" <?= in_array("ជប៉ុន", $county) ? "checked" : "" ?> id="county3" name="county     []">
+        </div>
+        <div>
+            <label for="county4">កូរ៉េ:</label>
+            <input type="checkbox" value="កូរ៉េ" <?= in_array("កូរ៉េ", $county) ? "checked" : "" ?> id="county4" name="county[]">
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary mt-2">Submit</button>
+        </div>
+    </form> 
+    
+</body>
+</html>
