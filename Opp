@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedure Approch</title>
+</head>
+<body>
+    <?php
+        class Student {
+            public string $name;
+            public float $score;
+            public string $school;
+            public function getDetails(): string {
+                return "និស្សិត៖ {$this->name} | ពិន្ទុ៖ {$this->score} | សាលា៖ {$this->school}";
+            }
+        }
+        $obj = new Student();
+        $obj->name = "ចាន់ ធី";
+        $obj->score = 67.0;
+        $obj->school = "សាកលវិទ្យាល័យអង្គរ";
+        echo $obj->getDetails();
+
+        $item = new Student();
+        $item->name = "តុង ហៀង";
+        $item->score = 70.0;
+        $item->school = "វិទ្យាល័យហ៊ុនសែនវត្តស្វាយ";
+        echo "<br>" . $item->getDetails();   
+        
+        $student = new Student();
+        $student->name = "សៀវ​ ឈីង";
+        $student->score = 85.0;
+        $student->school = "វិទ្យាល័យក្រឡាញ់";
+        echo "<br>" . $student->getDetails();
+        ?>
+        
+         $student = new Student();
+        $student->name = "វិ សាល";
+        $student->score = 60.0;
+        $student->school = "វិទ្យាល័យពួក";
+        echo "<br>" . $student->getDetails();
+        ?>
+
+         $student = new Student();
+        $student->name = "មា រីន";
+        $student->score = 75.0;
+        $student->school = "វិទ្យាល័យហ៊ុនសែនសៀមរាប";
+        echo "<br>" . $student->getDetails();
+        ?>
+</body>
+</html>
